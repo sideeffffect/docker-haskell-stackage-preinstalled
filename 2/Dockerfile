@@ -5,6 +5,13 @@ MAINTAINER Ondra Pelech <ondra.pelech@gmail.com>
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN cabal update
+
+RUN which ghc && \
+    ghc --version && \
+    which cabal && \
+    cabal --version && \
+    ghc-pkg list
+
 RUN cabal install abstract-deque \
                   abstract-par \
                   accelerate \
@@ -563,7 +570,6 @@ RUN cabal install abstract-deque \
                   lens-aeson \
                   lens-family-core \
                   lens-family-th \
-                  lhs2tex \
                   libgit \
                   libnotify \
                   lifted-async \
@@ -1065,6 +1071,12 @@ RUN cabal install abstract-deque \
                   zlib-bindings \
                   zlib-enum \
                   zlib-lens
+                  
+RUN which ghc && \
+    ghc --version && \
+    which cabal && \
+    cabal --version && \
+    ghc-pkg list
 
 ## run ghci by default unless a command is specified
 CMD ["ghci"]
