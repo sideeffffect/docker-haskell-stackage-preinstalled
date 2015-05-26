@@ -1,5 +1,5 @@
 ## Dockerfile for a haskell environment, with lts stackage and all packages preinstalled
-FROM       sideeffffect/haskell-stackage
+FROM       sideeffffect/haskell-stackage:2
 MAINTAINER Ondra Pelech <ondra.pelech@gmail.com>
 
 RUN apt-get update
@@ -783,7 +783,6 @@ RUN cabal install abstract-deque \
                   rematch \
                   repa \
                   repa-algorithms \
-                  repa-devil \
                   repa-io \
                   reroute \
                   resource-pool \
@@ -809,7 +808,6 @@ RUN cabal install abstract-deque \
                   scientific \
                   scotty \
                   scrobble \
-                  sdl2 \
                   securemem \
                   semigroupoid-extras \
                   semigroupoids \
